@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css'; 
-import CartList from './Components/cart-list/cart-list.component'; 
+import CartList from './Components/cart-list/cart-list.component';
+import SearchBox from './Components/search-box/serach-box.component'; 
 
 
 // using function components
@@ -60,27 +61,29 @@ class App extends Component {
       this.state = {
           veggies: [
             {
-              name: 'Potato',
+              name: 'potato',
               id: '1'
             },
             {
-              name: 'Tomato',
-              id: '2'
+              name: 'tomato',
+              id: '2',
+              quantity: '5'
             },
             {
-              name: 'Beans',
-              id: '3'
+              name: 'beans',
+              id: '3',
+              quantity: '8'
             },
             {
-              name: 'Onion',
+              name: 'onion',
               id: '4'
             },
             {
-              name: 'Bellpepper',
+              name: 'bellpepper',
               id: '5'
             },
             {
-              name: 'Carrot',
+              name: 'carrot',
               id: '6'
             },
           ],
@@ -125,23 +128,14 @@ class App extends Component {
 
       return (
       <div className='App'>
-        <input 
+        <SearchBox  
           className='search-box' 
-          type='search' 
-          placeholder='search veggies' 
-          onChange={ onSearchChange }/>
-          {/* { filteredVeggies.map((veggie) => {
-            return (
-            <div>
-              <h1> { veggie.name } </h1>
-            </div>);
-          })} */}
-          <CartList veggies= { filteredVeggies } />
-          <button > Click
-
-          </button>
+          onChangeHandler= { onSearchChange } 
+          placeholder='search veggies'/>
+        <CartList veggies= { filteredVeggies } /> 
       </div>
       );
+      
   }
 }
 

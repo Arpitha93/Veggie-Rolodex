@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Images from './images'
 import './App.css'; 
 import CartList from './Components/cart-list/cart-list.component';
 import SearchBox from './Components/search-box/serach-box.component'; 
@@ -62,7 +62,8 @@ class App extends Component {
           veggies: [
             {
               name: 'potato',
-              id: '1'
+              id: '1',
+              url: ''
             },
             {
               name: 'tomato',
@@ -133,6 +134,7 @@ class App extends Component {
           onChangeHandler= { onSearchChange } 
           placeholder='search veggies'/>
         <CartList veggies= { filteredVeggies } /> 
+        <Images />
       </div>
       );
       
